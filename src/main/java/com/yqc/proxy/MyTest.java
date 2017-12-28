@@ -1,6 +1,8 @@
 package com.yqc.proxy;
 
+import java.io.FileOutputStream;
 import java.lang.reflect.Proxy;
+import sun.misc.ProxyGenerator;
 
 /**
  * <p>title:</p>
@@ -18,5 +20,18 @@ public class MyTest {
         .newProxyInstance(People.class.getClassLoader(), new Class[]{People.class},
             new ZSParent(new Zhangsan()));
     people.zhaoduixiang();
+//    createProxyClassFile();
+    System.out.println("=======");
+    System.out.println(people);
   }
+
+  public static void createProxyClassFile() {
+    byte[] data = ProxyGenerator.generateProxyClass("$Proxy0.class", new Class[]{People.class});
+    try (FileOutputStream out = new FileOutputStream("$Proxy0.class")) {
+      out.write(data);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
 }
