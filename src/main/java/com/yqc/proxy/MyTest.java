@@ -14,7 +14,7 @@ import sun.misc.ProxyGenerator;
  */
 public class MyTest {
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Throwable {
     //这个方法返回的是一个代理类
     People people = (People) Proxy
         .newProxyInstance(People.class.getClassLoader(), new Class[]{People.class},

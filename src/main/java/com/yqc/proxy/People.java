@@ -10,5 +10,5 @@ package com.yqc.proxy;
  */
 public interface People {
 
-  void zhaoduixiang();
+  void zhaoduixiang() throws Throwable;
 }
