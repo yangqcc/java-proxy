@@ -24,3 +24,8 @@
 hs_err_pid*
 java-proxy.iml
 .idea/
+$Proxy0.java
+src/main/resources/
+src/test/
+target/generated-sources/
+$Proxy0.class
